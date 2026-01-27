@@ -1,0 +1,11 @@
+const dialects = [
+  { word: "いぬ", meaning: "帰る" },
+  { word: "たまるかえ", meaning: "とても驚いた" },
+  { word: "しんどい", meaning: "大変つらい" }
+];
+
+function showDialect() {
+  const d = dialects[Math.floor(Math.random() * dialects.length)];
+  document.getElementById("dialect").textContent = d.word;
+  document.getElementById("meaning").textContent = "（" + d.meaning + "）";
+}
