@@ -18,3 +18,71 @@
   <script src="script.js"></script>
 </body>
 </html>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f4f6f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.app {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 18px;
+  width: 90%;
+  max-width: 360px;
+  text-align: center;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 12px;
+}
+
+.dialect {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.meaning {
+  margin-top: 10px;
+  color: #555;
+}
+
+button {
+  margin-top: 24px;
+  padding: 14px;
+  width: 100%;
+  font-size: 16px;
+  border: none;
+  border-radius: 14px;
+  background: #1f7aec;
+  color: white;
+}
+const tosaWords = [
+  { word: "たまるかえ", meaning: "とんでもない／ありえない" },
+  { word: "こじゃんと", meaning: "とても／たくさん" },
+  { word: "いごっそう", meaning: "頑固な男性" },
+  { word: "はちきん", meaning: "気が強い女性" },
+  { word: "なにゆうが", meaning: "何を言っているのか" },
+  { word: "せわしい", meaning: "忙しい／落ち着かない" },
+  { word: "はよ", meaning: "早く" },
+  { word: "いぬ", meaning: "帰る" },
+  { word: "おんちゃん", meaning: "おじさん" },
+  { word: "しんどい", meaning: "疲れた" }
+];
+
+const button = document.getElementById("btn");
+const dialect = document.getElementById("dialect");
+const meaning = document.getElementById("meaning");
+
+button.addEventListener("click", () => {
+  const random = Math.floor(Math.random() * tosaWords.length);
+  dialect.textContent = tosaWords[random].word;
+  meaning.textContent = "（標準語：" + tosaWords[random].meaning + "）";
+});
+
